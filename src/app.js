@@ -1,4 +1,5 @@
 import express from 'express'
+import 'dotenv/config'
 import { connectToDatabase } from './helpers/connectToDatabase.helper.js'
 
 // TASK-003 Move PORT to environment file
