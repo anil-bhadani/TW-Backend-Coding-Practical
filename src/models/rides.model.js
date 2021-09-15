@@ -1,8 +1,30 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-const { Schema } = mongoose;
+const { Schema } = mongoose
 
 // TASK-004 - Define rides model
-const schema = new Schema({});
+const schema = new Schema(
+    {
+        start: {
+            type: Object,
+        },
+        end: {
+            type: Object,
+        },
+        driver: {
+            type: Schema.Types.ObjectId,
+        },
+        customers: [
+            {
+                type: Schema.Types.ObjectId,
+            },
+        ],
+    },
+    {
+        timestamps: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
+    }
+)
 
-export const Ride = mongoose.model('rides', schema, 'rides');
+export default mongoose.model('rides', schema, 'rides')
