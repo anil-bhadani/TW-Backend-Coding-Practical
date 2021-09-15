@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-export CustomElementRegistry connectToDatabase = () => {
+export const connectToDatabase = () => {
     // TASK-002 Connect to Database.
     mongoose
         .connect('mongodb://' + 'localhost' + ':' + '27017' + '/' + 'gorides', {
