@@ -3,7 +3,7 @@ import 'dotenv/config'
 import { connectToDatabase } from './helpers/connectToDatabase.helper.js'
 
 // TASK-003 Move PORT to environment file
-const PORT = 3000
+const PORT = process.env.PORT
 
 export const app = express()
 
