@@ -10,10 +10,9 @@ export async function startServer() {
     await connectToDatabase()
 
     app.get('/health', (req, res) => {
-        console.log('GET /health')
         // TASK-001 Fix health route. The above console is printing but the response is not sent to client.
 
-        return res.status(200)
+        return res.sendStatus(200)
     })
 
     app.listen(PORT, async () => {
