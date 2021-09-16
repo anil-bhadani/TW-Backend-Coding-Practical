@@ -1,8 +1,10 @@
+/* eslint-disable import/extensions */
+/* eslint-disable node/file-extension-in-import */
 import mongoose from 'mongoose'
-import Ride from '../models/rides.model'
-import { create, update } from '../helpers/service.helper'
+import Ride from '../models/rides.model.js'
+import { create, update } from '../helpers/service.helper.js'
 
-const { Types } = mongoose
+const { ObjectId } = mongoose.Types
 
 export const getAllRides = async ({ page, limit }) => {
     try {
@@ -83,7 +85,7 @@ export const getRideData = async (id) => {
         const pipeline = [
             {
                 $match: {
-                    _id: Types.ObjectId(id),
+                    _id: ObjectId(id),
                 },
             },
             {

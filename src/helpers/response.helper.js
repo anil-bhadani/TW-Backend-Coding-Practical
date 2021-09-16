@@ -1,4 +1,6 @@
-import { SUCCESS, ERROR } from '../common/msg'
+/* eslint-disable import/extensions */
+/* eslint-disable node/file-extension-in-import */
+import { SUCCESS, ERROR } from '../common/msg.js'
 
 // Send success response
 export const resSuccess = async (res, message, statusCode = 200, data = null) => {

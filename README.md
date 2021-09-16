@@ -4,7 +4,7 @@ The goal of this practical is to assess your proficiency in software engineering
 
 ## Documentation
 
-Find the postman collection here: // TODO Publish collection and paste link here
+Find the postman collection here: https://www.getpostman.com/collections/aa28d84a90f69d82b7ee
 
 ## Guide
 
@@ -26,7 +26,7 @@ Find the postman collection here: // TODO Publish collection and paste link here
 -   [x] TASK-006 - Add Create/Update Ride routes
 -   [x] TASK-007 - Refactor
 -   [x] TASK-008 - Add linting (Bonus)
--   [ ] TASK-009 - Add cleanup cron job (Bonus)
+-   [x] TASK-009 - Add cleanup cron job (Bonus)
 
 ## Task Description
 

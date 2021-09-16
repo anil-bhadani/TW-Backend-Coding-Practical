@@ -1,11 +1,13 @@
+/* eslint-disable import/extensions */
+/* eslint-disable node/file-extension-in-import */
 import express from 'express'
-import { getRides, addDummyData, addRide, updateRide, getRide } from '../controllers/rides.controller'
+import { getRides, addDummyData, addRide, updateRide, getRide } from '../controllers/rides.controller.js'
 import {
     getAllRidesValidator,
     createRideValidator,
     updateRideValidator,
     getRideValidator,
-} from '../middlewares/validator'
+} from '../middlewares/validator.js'
 
 const router = express.Router()
 
