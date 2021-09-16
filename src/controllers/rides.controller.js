@@ -4,9 +4,19 @@ import Driver from '../models/driver.model.js'
 import Customer from '../models/customer.model.js'
 import { resError, resSuccess } from '../helpers/response.helper.js'
 import catchAsyncHelper from '../helpers/catchAsync.helper.js'
-import { GET_ALL_RIDES_SUC, GET_ALL_RIDES_ERR, DUMMY_SUCC } from '../common/msg.js'
+import {
+    GET_ALL_RIDES_SUC,
+    GET_ALL_RIDES_ERR,
+    DUMMY_SUCC,
+    CREATE_RIDE_SUCC,
+    CREATE_RIDE_ERR,
+    UPDATE_RIDE_ERR,
+    UPDATE_RIDE_SUCC,
+    GET_RIDE_SUC,
+    GET_RIDE_ERR,
+} from '../common/msg.js'
 import { create } from '../helpers/service.helper.js'
-import { getAllRides } from '../services.js/rides.services.js'
+import { getAllRides, createRide, updateRideData, getRideData } from '../services.js/rides.services.js'
 
 /**
  * Method to add dummy data
@@ -108,10 +118,56 @@ export const addDummyData = catchAsyncHelper(async (req, res) => {
     return resSuccess(res, DUMMY_SUCC, 200)
 })
 
+/**
+ * Method to get all rides
+ * @param {Request} req
+ * @param {Response} res
+ * @returns rides
+ */
+
 export const getRides = catchAsyncHelper(async (req, res) => {
     const { page, limit } = req.query
 
     const response = await getAllRides({ page, limit })
 
-    return !response ? resError(res, GET_ALL_RIDES_ERR, 200) : resSuccess(res, GET_ALL_RIDES_SUC, 200, response)
+    return !response ? resError(res, GET_ALL_RIDES_ERR, 400) : resSuccess(res, GET_ALL_RIDES_SUC, 200, response)
+})
+
+/**
+ * Method to create ride
+ * @param {Request} req
+ * @param {Response} res
+ * @returns ride
+ */
+
+export const addRide = catchAsyncHelper(async (req, res) => {
+    const response = await createRide(req.body)
+
+    return !response ? resError(res, CREATE_RIDE_ERR, 400) : resSuccess(res, CREATE_RIDE_SUCC, 200, response)
+})
+
+/**
+ * Method to update ride
+ * @param {Request} req
+ * @param {Response} res
+ * @returns ride
+ */
+
+export const updateRide = catchAsyncHelper(async (req, res) => {
+    const response = await updateRideData(req.body)
+
+    return !response ? resError(res, UPDATE_RIDE_ERR, 400) : resSuccess(res, UPDATE_RIDE_SUCC, 200, response)
+})
+
+/**
+ * Method to get ride
+ * @param {Request} req
+ * @param {Response} res
+ * @returns ride
+ */
+
+export const getRide = catchAsyncHelper(async (req, res) => {
+    const response = await getRideData(req.query.ride)
+
+    return !response ? resError(res, GET_RIDE_ERR, 400) : resSuccess(res, GET_RIDE_SUC, 200, response)
 })

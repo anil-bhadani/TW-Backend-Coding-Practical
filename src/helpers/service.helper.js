@@ -5,7 +5,7 @@ export const getDetailById = async (collection, key, value, fields) => {
 
 export const update = async (collection, condition, data) => {
     const dataUpdate = await collection.updateOne(condition, data)
-    return !!(dataUpdate.nModified || dataUpdate.ok)
+    return !(dataUpdate.nModified || dataUpdate.ok) ? false : dataUpdate
 }
 
 export const deleteById = async (collection, id) => {
