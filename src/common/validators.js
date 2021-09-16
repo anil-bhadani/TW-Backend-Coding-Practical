@@ -20,7 +20,7 @@ export const isNumber = async (element) => {
 }
 
 export const isGreaterThanZero = async (element) => {
-    if (Number(element) >= 0) return true
+    if (Math.sign(Number(element)) === 1) return true
 }
 
 export const isValidLatitude = async (element) => {
