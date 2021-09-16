@@ -11,10 +11,10 @@ const agenda = new Agenda({ db: { address: mongoConnectionString } })
 
 export const agendaCron = async () => {
     agenda.define('delete old rides', async () => {
-        console.log(`Running on every ${process.env.AGENDA_TIME}`)
-        await deleteRidesAfterOneDay()
+        console.log(`Running on every min`)
+        await deleteRidesAfterOneDay(process.env.AGENDA_TIME)
     })
 
     await agenda.start()
-    await agenda.every(process.env.AGENDA_TIME, 'delete old rides')
+    await agenda.every('* * * * *', 'delete old rides')
 }

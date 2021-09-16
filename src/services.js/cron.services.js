@@ -6,9 +6,8 @@
 import moment from 'moment'
 import Ride from '../models/rides.model.js'
 
-export const deleteRidesAfterOneDay = async () => {
-    let date = Date.now() - 24 * 60 * 60 * 1000
-
+export const deleteRidesAfterOneDay = async (time) => {
+    let date = Date.now() - time
     date = moment(date).format('LLLL')
 
     const rides = await Ride.aggregate([
