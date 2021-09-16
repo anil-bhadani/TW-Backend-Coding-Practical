@@ -1,19 +1,11 @@
 /* eslint-disable import/extensions */
 /* eslint-disable node/file-extension-in-import */
-import {
-    required,
-    isNumber,
-    isGreaterThanZero,
-    validID,
-    isValidLatitude,
-    isValidLongitude,
-} from '../common/validators.js'
+import { required, isNumber, validID, isValidLatitude, isValidLongitude } from '../common/validators.js'
 import { resError } from '../helpers/response.helper.js'
 import {
     PAGE_REQUIRED,
     LIMIT_REQUIRED,
     PARA_SHOULD_NUMBER,
-    PARA_SHOULD_POSITIVE,
     VALID_ID_REQ,
     VALID_LAT_REQ,
     VALID_LONG_REQ,
