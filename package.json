@@ -4,9 +4,24 @@
     "description": "The goal of these exercises are to assess your proficiency in software engineering that is related to the daily work that we do at Thinkwik.",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "lint": "eslint ./src --fix",
+        "lint:fix": "npm run lint -- --fix",
+        "prepare": "husky install",
+        "test": "eslint ./src --fix"
     },
-    "author": "Thinkwik",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "**/*.js": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "author": "Anil",
     "license": "ISC",
     "type": "module",
     "dependencies": {
@@ -21,6 +36,8 @@
         "eslint-plugin-import": "^2.22.0",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-prettier": "^3.1.4",
-        "eslint-plugin-security": "^1.4.0"
+        "eslint-plugin-security": "^1.4.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2"
     }
 }

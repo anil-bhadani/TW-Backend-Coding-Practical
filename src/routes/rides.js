@@ -1,11 +1,11 @@
 import express from 'express'
-import { getRides, addDummyData, addRide, updateRide, getRide } from '../controllers/rides.controller.js'
+import { getRides, addDummyData, addRide, updateRide, getRide } from '../controllers/rides.controller'
 import {
     getAllRidesValidator,
     createRideValidator,
     updateRideValidator,
     getRideValidator,
-} from '../middlewares/validator.js'
+} from '../middlewares/validator'
 
 const router = express.Router()
 

@@ -1,7 +1,10 @@
+/* eslint-disable node/prefer-global/console */
+/* eslint-disable no-console */
 import express from 'express'
 import 'dotenv/config'
-import { connectToDatabase } from './helpers/connectToDatabase.helper.js'
-import index from './routes/index.js'
+import { connectToDatabase } from './helpers/connectToDatabase.helper'
+import index from './routes/index'
+
 // TASK-003 Move PORT to environment file
 const { PORT } = process.env
 

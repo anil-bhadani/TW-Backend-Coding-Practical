@@ -5,8 +5,8 @@ import {
     validID,
     isValidLatitude,
     isValidLongitude,
-} from '../common/validators.js'
-import { resError } from '../helpers/response.helper.js'
+} from '../common/validators'
+import { resError } from '../helpers/response.helper'
 import {
     PAGE_REQUIRED,
     LIMIT_REQUIRED,
@@ -16,7 +16,7 @@ import {
     VALID_LAT_REQ,
     VALID_LONG_REQ,
     CUST_REQ,
-} from '../common/msg.js'
+} from '../common/msg'
 
 export const getAllRidesValidator = async (req, res, next) => {
     const { page, limit } = req.query

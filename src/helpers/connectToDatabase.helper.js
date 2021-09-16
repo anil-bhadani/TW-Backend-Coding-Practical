@@ -1,9 +1,12 @@
+/* eslint-disable node/prefer-global/console */
+/* eslint-disable no-console */
 import mongoose from 'mongoose'
 
+// eslint-disable-next-line import/prefer-default-export
 export const connectToDatabase = () => {
     // TASK-002 Connect to Database.
     mongoose
-        .connect('mongodb://' + 'localhost' + ':' + '27017' + '/' + 'gorides', {
+        .connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/'${process.env.DB_NAME}`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
