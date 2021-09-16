@@ -6,7 +6,7 @@ import mongoose from 'mongoose'
 export const connectToDatabase = () => {
     // TASK-002 Connect to Database.
     mongoose
-        .connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/'${process.env.DB_NAME}`, {
+        .connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,

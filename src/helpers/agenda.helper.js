@@ -6,7 +6,7 @@
 import { Agenda } from 'agenda/es.js'
 import { deleteRidesAfterOneDay } from '../services.js/cron.services.js'
 
-const mongoConnectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/'${process.env.DB_NAME}`
+const mongoConnectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
 const agenda = new Agenda({ db: { address: mongoConnectionString } })
 
 export const agendaCron = async () => {

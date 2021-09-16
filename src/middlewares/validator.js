@@ -26,8 +26,9 @@ export const getAllRidesValidator = async (req, res, next) => {
     if (await required(limit)) return resError(res, LIMIT_REQUIRED, 422)
     if (await isNumber(page)) return resError(res, PARA_SHOULD_NUMBER, 422)
     if (await isNumber(limit)) return resError(res, PARA_SHOULD_NUMBER, 422)
-    // if (await isGreaterThanZero(limit)) return resError(res, PARA_SHOULD_POSITIVE, 422)
-    if (await isGreaterThanZero(page)) return resError(res, PARA_SHOULD_POSITIVE, 422)
+
+    req.query.page *= Math.sign(Number(req.query.page))
+    req.query.limit *= Math.sign(Number(req.query.limit))
 
     next()
 }

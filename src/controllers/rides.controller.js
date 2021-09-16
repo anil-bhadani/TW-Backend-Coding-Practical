@@ -134,7 +134,9 @@ export const getRides = catchAsyncHelper(async (req, res) => {
 
     const response = await getAllRides({ page, limit })
 
-    return !response ? resError(res, GET_ALL_RIDES_ERR, 400) : resSuccess(res, GET_ALL_RIDES_SUC, 200, response)
+    return !response.length > 0
+        ? resError(res, GET_ALL_RIDES_ERR, 400)
+        : resSuccess(res, GET_ALL_RIDES_SUC, 200, response)
 })
 
 /**
@@ -173,5 +175,5 @@ export const updateRide = catchAsyncHelper(async (req, res) => {
 export const getRide = catchAsyncHelper(async (req, res) => {
     const response = await getRideData(req.query.ride)
 
-    return !response ? resError(res, GET_RIDE_ERR, 400) : resSuccess(res, GET_RIDE_SUC, 200, response)
+    return !response.length > 0 ? resError(res, GET_RIDE_ERR, 400) : resSuccess(res, GET_RIDE_SUC, 200, response)
 })
