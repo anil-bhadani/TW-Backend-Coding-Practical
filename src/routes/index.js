@@ -1,7 +1,7 @@
 import express from 'express'
 
 // API Router
-import rideRoute from './rides.js'
+import rideRoute from './rides'
 
 const router = express.Router()
 

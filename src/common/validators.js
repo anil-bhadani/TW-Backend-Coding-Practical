@@ -29,6 +29,7 @@ export const isValidLatitude = async (element) => {
 }
 
 export const isValidLongitude = async (element) => {
+    // eslint-disable-next-line security/detect-unsafe-regex
     const longitude = /^-?(([-+]?)([\d]{1,3})((\.)(\d+))?)/g
     if (!longitude.test(element)) return true
 }

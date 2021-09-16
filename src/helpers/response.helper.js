@@ -1,4 +1,4 @@
-import { SUCCESS, ERROR } from '../common/msg.js'
+import { SUCCESS, ERROR } from '../common/msg'
 
 // Send success response
 export const resSuccess = async (res, message, statusCode = 200, data = null) => {

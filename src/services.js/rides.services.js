@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
-import Ride from '../models/rides.model.js'
-import { create, update } from '../helpers/service.helper.js'
+import Ride from '../models/rides.model'
+import { create, update } from '../helpers/service.helper'
+
 const { Types } = mongoose
 
 export const getAllRides = async ({ page, limit }) => {
@@ -71,7 +72,7 @@ export const updateRideData = async (data) => {
     try {
         const ride = await update(Ride, { _id: data.ride }, data)
 
-        return !ride ? false : true
+        return !!ride
     } catch (err) {
         return false
     }

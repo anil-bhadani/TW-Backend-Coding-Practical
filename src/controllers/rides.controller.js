@@ -1,9 +1,11 @@
 // eslint-disable-next-line import/extensions
-import Ride from '../models/rides.model.js'
-import Driver from '../models/driver.model.js'
-import Customer from '../models/customer.model.js'
-import { resError, resSuccess } from '../helpers/response.helper.js'
-import catchAsyncHelper from '../helpers/catchAsync.helper.js'
+/* eslint-disable node/prefer-global/console */
+/* eslint-disable no-console */
+import Ride from '../models/rides.model'
+import Driver from '../models/driver.model'
+import Customer from '../models/customer.model'
+import { resError, resSuccess } from '../helpers/response.helper'
+import catchAsyncHelper from '../helpers/catchAsync.helper'
 import {
     GET_ALL_RIDES_SUC,
     GET_ALL_RIDES_ERR,
@@ -14,9 +16,9 @@ import {
     UPDATE_RIDE_SUCC,
     GET_RIDE_SUC,
     GET_RIDE_ERR,
-} from '../common/msg.js'
-import { create } from '../helpers/service.helper.js'
-import { getAllRides, createRide, updateRideData, getRideData } from '../services.js/rides.services.js'
+} from '../common/msg'
+import { create } from '../helpers/service.helper'
+import { getAllRides, createRide, updateRideData, getRideData } from '../services.js/rides.services'
 
 /**
  * Method to add dummy data
