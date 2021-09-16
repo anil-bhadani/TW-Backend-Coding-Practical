@@ -1,7 +1,9 @@
 /* eslint-disable node/prefer-global/console */
 /* eslint-disable no-console */
-import { resError } from './response.helper'
-import { SOMETHING_WENT_WRONG } from '../common/msg'
+/* eslint-disable import/extensions */
+/* eslint-disable node/file-extension-in-import */
+import { resError } from './response.helper.js'
+import { SOMETHING_WENT_WRONG } from '../common/msg.js'
 
 export default (fn) => {
     return (req, res) => {

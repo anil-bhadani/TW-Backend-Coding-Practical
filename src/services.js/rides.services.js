@@ -1,6 +1,8 @@
+/* eslint-disable import/extensions */
+/* eslint-disable node/file-extension-in-import */
 import mongoose from 'mongoose'
-import Ride from '../models/rides.model'
-import { create, update } from '../helpers/service.helper'
+import Ride from '../models/rides.model.js'
+import { create, update } from '../helpers/service.helper.js'
 
 const { Types } = mongoose
 

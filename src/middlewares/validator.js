@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable node/file-extension-in-import */
 import {
     required,
     isNumber,
@@ -5,8 +7,8 @@ import {
     validID,
     isValidLatitude,
     isValidLongitude,
-} from '../common/validators'
-import { resError } from '../helpers/response.helper'
+} from '../common/validators.js'
+import { resError } from '../helpers/response.helper.js'
 import {
     PAGE_REQUIRED,
     LIMIT_REQUIRED,
@@ -16,7 +18,7 @@ import {
     VALID_LAT_REQ,
     VALID_LONG_REQ,
     CUST_REQ,
-} from '../common/msg'
+} from '../common/msg.js'
 
 export const getAllRidesValidator = async (req, res, next) => {
     const { page, limit } = req.query
