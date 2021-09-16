@@ -6,7 +6,9 @@
     "scripts": {
         "start": "node index.js",
         "lint": "eslint ./src --fix",
-        "lint:fix": "npm run lint -- --fix"
+        "lint:fix": "npm run lint -- --fix",
+        "prepare": "husky install",
+        "test": "eslint ./src --fix"
     },
     "husky": {
         "hooks": {
