@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const { Schema } = mongoose
+const { Schema, Types } = mongoose
 
 // TASK-004 - Define rides model
 const schema = new Schema(
@@ -12,11 +12,11 @@ const schema = new Schema(
             type: Object,
         },
         driver: {
-            type: Schema.Types.ObjectId,
+            type: Types.ObjectId,
         },
         customers: [
             {
-                type: Schema.Types.ObjectId,
+                type: Types.ObjectId,
             },
         ],
     },

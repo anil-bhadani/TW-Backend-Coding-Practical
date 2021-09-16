@@ -6,12 +6,6 @@ const { Schema } = mongoose
 const schema = new Schema(
     {
         name: String,
-        vehicleNumber: String,
-        vehicleType: {
-            type: String,
-            enum: ['CAR', 'BIKE'],
-            default: 'CAR',
-        },
     },
     {
         timestamps: true,

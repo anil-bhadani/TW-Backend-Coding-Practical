@@ -1,9 +1,10 @@
-import { Router } from 'express';
-const router = new Router();
+import express from 'express'
 
-// TASK-005 - Get Rides
-router.get('/rides');
+// API Router
+import rideRoute from './rides.js'
 
-// TASK-006 - Add Create/Update Ride routes
+const router = express.Router()
 
-export default router;
+router.use('/ride', rideRoute)
+
+export default router
